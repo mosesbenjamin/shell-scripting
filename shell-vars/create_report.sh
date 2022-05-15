@@ -6,6 +6,6 @@ container="$1"
 directory="$2"
 
 mkdir -p -- "$directory"
-grep -- "$container" shipments.csv > "$directory/$container.csv"
+grep -- "$container" shipments.csv > "$directory/{$container}_report.csv"
 
-echo Wrote report "$directory/$container.csv"
+echo Wrote report "$directory/${container}_report.csv"
