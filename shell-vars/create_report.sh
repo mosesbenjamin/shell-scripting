@@ -2,12 +2,10 @@
 
 # Create a report file for a single shipping container
 
-# Add a variable called 'directory' that determines
-# where we save our output file
+container="$1"
+directory="$2"
 
-directory=reports
+mkdir -p "$directory"
+grep "$container" shipments.csv > "$directory/$container.csv"
 
-mkdir -p $directory
-grep $1 shipments.csv > $directory/$1.csv
-
-echo Wrote report $directory/$1.csv
+echo Wrote report "$directory/$container.csv"
